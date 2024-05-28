@@ -1,70 +1,97 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet, Image, ImageBackground, ScrollView } from 'react-native';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-
-export default function HomeScreen() {
+const index = () => {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <ScrollView>
+      <View>
+        <ImageBackground style={styles.backgroundImage} source={{uri: "https://media1.tenor.com/m/tFsl_zMgnE0AAAAd/monkey-brush.gif"}}>
+          <View style={styles.container}>
+          
+            <Image
+              source={{uri: 'https://media1.tenor.com/m/oNMafTuU4uIAAAAd/monkey-rizz.gif'}}
+              style={styles.profileImage}
+            />
+            <Text style={styles.name}>Rizz Monkey</Text>
+            <Text style={styles.bio}>The Means of Which All is Revealed</Text>
+            <Text style={styles.label}>Age:<Text style={styles.info}> Unknown</Text></Text>
+            <Text style={styles.label}>Location:<Text style={styles.info}> Calgary, Alberta</Text></Text>
+            <Text style={styles.label}>Charisma:<Text style={styles.info}> 100</Text></Text>            
+            <Text style={styles.label}>Attractiveness:<Text style={styles.info}> Max</Text></Text>
+              
+              
+          </View>
+          
+        </ImageBackground>
+        <View style={styles.imageContainer}>
+              {[...Array(390)].map((_, index) => (
+                <Image key={index} style={styles.image2} source={{ uri: "https://i.kym-cdn.com/entries/icons/facebook/000/043/789/cover5.jpg" }} />
+              ))}                                
+        </View>      
+      </View>
+      
+    </ScrollView>
   );
-}
+};
+
+export default index;
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
+  container: {
+    flex: 1,
     alignItems: 'center',
-    gap: 8,
+    justifyContent: 'center',
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  profileImage: {
+    width: 150,
+    height: 150,
+    borderRadius: 75,
+    marginBottom: 20,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  name: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  label:{
+    fontWeight:"bold",
+    fontSize: 16,
+    marginBottom: 5,
+    borderWidth:1,
+    borderColor:"black",
+    backgroundColor:"white",
+    borderRadius:5,
+    flexDirection:"row", 
+  },
+  bio: {
+    fontSize: 18,
+    marginBottom: 10,
+    borderWidth:2,
+    borderColor:"black",
+    backgroundColor:"white",
+    borderRadius:5,
+  },
+  info: {
+    fontSize: 16,
+    fontWeight:"normal",
+    marginBottom: 5,   
+    flexDirection:"row",
+  },
+  backgroundImage:{
+    flex:1,
+    resizeMode:"cover",
+    justifyContent:"center",
+    width:"100%",
+    height:"100%",
+  },
+  imageContainer:{
+    flexDirection:"row",
+    flexWrap:"wrap",
+  },
+  image2:{
+    width:50,
+    height:50,
   },
 });
+
+
