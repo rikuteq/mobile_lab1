@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-, "app/(tabs)/props.jsx", "app/(tabs)/props.jsx"  ]
+, "app/(tabs)/props.jsx", "app/(tabs)/props.jsx", "app/(tabs)/Flatlist.jsx", "app/(tabs)/Flatlist.jsx"  ]
 }
