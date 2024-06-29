@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-, "app/(tabs)/props.jsx", "app/(tabs)/props.jsx", "app/(tabs)/Flatlist.jsx", "app/(tabs)/Flatlist.jsx"  ]
+, "app/auth/(tabs)/props.jsx", "app/auth/(tabs)/props.jsx", "app/auth/(tabs)/Flatlist.jsx", "app/auth/(tabs)/Flatlist.jsx", "components/LoginForm.jsx", "components/LoginForm.jsx", "components/LoginForm.jsx", "components/LoginForm.jsx", "components/ModalComp.jsx", "app/auth/(tabs)/profile.jsx", "app/index.jsx"  ]
 }
